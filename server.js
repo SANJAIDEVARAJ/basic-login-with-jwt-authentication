@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-
+//Login
 app.post('/login', async (req,res) => {
     var user = req.body;
     try {
@@ -38,6 +38,7 @@ app.post('/login', async (req,res) => {
 })
 
 
+//Registeration
 app.post('/register', async (req,res)=>{
     var user = req.body;
    var hash = await bcrypt.hash(user.password, 10);
